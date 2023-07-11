@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeWatch</title>
+        <style>
+            div {
+                background-color: green;
+                border: 3px solid black;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                /* padding: 50px 0; */
+            }
+        </style>
+</head>
+<body>
+    <div>
+        <center> <br><br>
+        <span>00:00:00</span> <br>
+        <input type="button" value="Старт">
+        <input type="button" value="Стоп">
+        <input type="button" value="Срос">
+        </center>
+    </div>
+<script>
+    let h2 = 0, h1 = 0, m2 = 0, m1 = 0, s2 =, s1 = 0;
+
+    const div = document.querySelector('div');
+    const span = document.querySelector('span');
+    const input = document.getElementsByTagName('input');
+
+    input[0].onclick = ()=> {
+        start = ()=> {
+            ++s1;
+            span.textContent = stopwatch();
+        }
+        interval = setInterval(start,1000);
+
+        div.style.backgroundColor = 'yellowgreen';
+    }
+
+    input[1].onclick = ()=> {
+        clearInterval(interval);
+
+        div.style.backgroundColor = 'red';
+    }
+
+    input[2].onclick = ()=> {
+        h2 = 0; h1 = 0; m2 = 0; m1 = 0; s2 = 0; s1 = 0;
+        span.textContent = stopwatch();
+
+        div.style.backgroundColor = 'grey'
+}
+
+//Фунция вывода времени в секундомере
+stopwatch = ()=> {
+    
+    if (s1==10) {s1=0; ++s2; t= 0};
+    if (s2==6) {s2=0;++m1};
+    if (m1==10) {m1=0;++m2};
+    if (m2==6) {m2=0;++h1};
+
+    if (h1==10) {h1=0;++h2};
+
+    text = ''+h2+h1+':'+m2+m1+':'+s2+s1;
+    return text;
+}
+</script>
+
+<script src="./index.js"></script>
+</body>
+</html>

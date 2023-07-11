@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+
+        b {
+            color: darkgoldenrod;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div style="width: 900px; font-style: italic; font-weight: bold;">    
+        Создать массив, добавить элемент в конец, заменить значение элемента, удалить первый элемент и показать его, вставить 2 элемента в начало массива.
+    </div><br>
+
+    <script>
+        document.write("<b><i> Создать массив styles с элементами &ldquo;Джаз&rdquo; и &ldquo;Блюз&rdquo;.</br>Добавить &ldquo;Рок-н-Ролл&rdquo; в конце массива.</br>Заменить значение элемента в середине массива на &ldquo;Классика&rdquo;.</br>Удалить первый элемент массива.</br> Показать удаленный элемент массива.</br>Вставить &ldquo;Рэп&rdquo; и &ldquo;Регги&rdquo; в начало массива.</i></b></br></br>");
+    </script>
+    
+    <center>
+    <script>
+        const styles = ["Джаз","Блюз"];
+        document.write("Массив: " + "<i style='color: darkorange'>"+styles.join(" * ")+"</i>"+"<br>");
+        
+        styles.push("Рок-н-Ролл");
+        document.write("Массив  с новым элементом: " + "<i style='color: darkorange'>"+styles.join(" * ")+"</i>"+"<br>");
+
+        // a = styles.length;
+        // let b = a/2 -1;
+        let b = styles.length/2 - 1;
+
+        // if (styles.length%2==1) {
+        //     styles[0.5+b] = "Классика";
+        // } else {
+        //     styles[b] = "Классика";
+        //     styles[b+1] = "Классика";
+        // }
+        styles.length%2==1 ? styles[0.5+b] = "Классика" : styles[b] = "Классика", styles[b+1] = "Классика";
+        document.write("Массив  с замененным элементом: " + "<i style='color: darkorange'>"+styles.join(" * ")+"</i>"+"<br>");
+
+        del_el = styles.shift();
+        document.write("Массив без первого элемента: " + "<i style='color: darkorange'>"+styles.join(" * ")+"</i>"+"<br>");
+        document.write("Удаленный элемент: " + "<i style='color: darkorange'>"+del_el+"</i>"+"<br>");
+
+        styles.unshift("Рэп","Регги");
+        document.write("Массив c добавленными элементами в начале: " + "<i style='color: darkorange'>"+styles.join(" * ")+"</i>")
+
+
+
+    </script>
+    </center>
+    
+</body>
+</html>

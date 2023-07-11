@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка телефона</title>
+    <style>
+        input::selection {
+            background-color: lightgreen;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div style="width: 900px; font-style: italic; font-weight: bold;">
+        Используя JS Создайте поле для ввода телефона и кнопку сохранения. Пользователь должен ввести номер телефона в формате 000-000-00-00. Поле того как пользователь нажимает кнопку сохранить проверте правильность ввода номера, если номер правильный сделайте зеленый фон и используя document.location переведите пользователя на страницу https://risovach.ru/upload/2013/03/mem/toni-stark_13447470_big_.jpeg если будет ошибка отобразите её в диве до input.
+    </div><br>
+
+<script>
+    let l;
+
+    const body = document.querySelector('body');
+
+    const div = document.createElement('div');
+    const input1 = document.createElement('input');
+    const input2 = document.createElement('input');
+    
+    div.textContent = 'Введеите номер в формате 000-000-00-00';
+    input1.type = 'text';
+    input1.autofocus = true;
+    input1.placeholder = '000-000-00-00';
+    input1.oninput = ()=> {
+        l = input1.value.length;
+
+        const p1 =/\d{3}/;
+        const p2 = /\d{3}-\d{3}/;
+        const p3 = /\d{3}-\d{3}-\d{2}/
+
+        if (p1.test(input1.value)&&l==3) {
+            input1.value = input1.value.replace(p1,input1.value+'-');
+        }
+        if (p2.test(input1.value)&&l==7) {
+            input1.value = input1.value.replace(p2,input1.value+'-');
+        }
+        if (p3.test(input1.value)&&l==10) {
+            input1.value = input1.value.replace(p3,input1.value+'-');
+        }
+
+    };
+    input2.type = 'button';
+    input2.value = 'Save';
+    input2.accessKey = 'a';
+    input2.onclick = ()=> {
+        const pattern = /\d{3}-\d{3}-\d{2}-\d{2}\b/;
+        if (pattern.test(input1.value)) {
+            input1.style.backgroundColor = 'lightgreen';
+            input1.style.color = 'white';
+
+            setTimeout(()=>{
+                document.location = 'https://risovach.ru/upload/2013/03/mem/toni-stark_13447470_big_.jpeg';
+            },5000);
+        } else {
+            input1.focus();
+            input1.select();
+            div.style.backgroundColor = 'LightCoral';
+            if (l<13) {
+                div.innerText = 'В номере меньше 10 цифр, введите номер еще раз:';
+            }
+            if (l>13) {
+                div.innerText = 'В номере больше 10 цифр, введите номер еще раз:';
+            }
+            if (l==13) {
+                div.innerText = 'В номере должны быть только цифры, введите номер еще раз:';
+            }
+        }
+    }
+
+    body.append(div);
+    div.after(input1);
+    input1.after(input2);
+
+</script>
+</body>
+</html>

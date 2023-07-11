@@ -1,0 +1,179 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.header {
+    background-image: url(../img/bridge.png);
+    background-repeat: round;
+    /* width: auto;
+    height: auto; */
+}
+
+a > img {
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.menu {
+    background-color: orange;
+    width: 77px;
+    height: 77px;
+    float: right;
+    color: white;
+    font-size: 53px;
+    text-align: center;
+    margin-right: 20%;
+    margin-top: 20px;
+}
+
+.reklama {
+    font-size: 50px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.reklama > span {
+    font-size: 25px;
+    color: aliceblue;
+}
+
+.adds {
+    background-color: Gainsboro;
+    width: 60%;
+    margin-left: 20%;
+    /* padding-left: 0px; */
+    position: relative;
+    top: 100px;
+}
+
+/* .riad > span {
+    color: gray;
+    font-size: 24px;
+    margin-left: 140px;
+    position: relative;
+    left: -67px;
+} */
+
+.stolb {
+    /* float: left; */
+    display: inline-block;
+    margin: 33px 37px 33px 42px;
+    /* padding: 0px; */
+}
+
+.riad1 {
+    font-size: 55px;
+    color: red;
+    text-align: center;
+}
+
+.riad2 {
+    font-size: 30px;
+    /* margin: 0px 0; */
+    height: 0px;
+}
+
+.riad3 {
+font-size: 15px;
+color: gray;
+text-align: center;
+}
+
+.stolb > span {
+    /* padding: 0px 0; */
+    /* width: 160px; */
+    position: relative;
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative;
+    top: 100px; 
+    width: 60%;
+    margin-left: 20%;
+}
+
+h1 {
+    text-align: center;
+    /* clear: both; */
+    margin: 55px;
+}
+
+.footer {
+    background-color: orange;
+    clear: both;
+    position: relative;
+    top: 150px; 
+    height: 100px;
+    padding-top: 42px;
+    padding-left: 20%;
+}
+
+.rekl {
+    float: left;
+}
+
+.right {
+    float: left;
+    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+    right: -18%;
+    text-indent: 10px;
+    padding: 20px;
+    position: relative;
+    /* clear: both; */
+}
+
+.rekl1{
+    color: white;
+    font-size: 30px;
+    /* clear: both; */
+    font-weight: 50px;
+}
+
+.rekl2{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.container > div {
+    float: left;
+}
+
+div > img {
+    width: 295px;
+    height: 380px;
+    margin: 2px;
+}
+
+img + br + span {
+    border-top: 4px solid red;
+    padding: 13px 0;
+    /* margin-top: 0px; */
+    position: relative;
+    top: 27px;
+    left: 3px;
+}
+
+span + br + div {
+    font-size: 12px;
+    position: relative;
+    top: 35px;
+    display: inline-block;
+    width: 295px;
+    margin: 2px;
+    color: thistle;
+    margin-bottom: 35px;
+}

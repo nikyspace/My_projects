@@ -1,0 +1,127 @@
+:root {
+    background-image: url(../img/background.png);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 90%;
+    margin: 10px auto 0;
+}
+
+img, div {
+    position: relative;
+}
+
+.head > div, img {
+    display: inline-block;
+}
+.milan {
+    font-size: 1.6rem;
+}
+
+.holidays {
+    font-size: 1rem;
+}
+
+img + div {
+    left: 7px;
+}
+
+.right {
+    float: right;
+}
+
+.contain > div {
+    /* display: inline-block; */
+    width: 308px;
+    height: 200px;
+    box-shadow: 0 -2px 0px 2px white;
+    margin-bottom: 50px;
+    margin-top: 15px;
+    float: left;
+    margin-right: 59px;
+}
+
+.card1 {
+    background-image: url(../img/card1.png);
+}
+
+.card2 {
+    background-image: url(../img/card2.png);
+}
+
+.card3 {
+    background-image: url(../img/card3.png);
+}
+
+.card4 {
+    background-image: url(../img/card4.png);
+}
+
+.card5 {
+    background-image: url(../img/card5.png);
+}
+
+.card6 {
+    background-image: url(../img/card6.png);
+}
+
+.contain {
+    margin: 3px 0;
+    /* visibility: visible; */
+}
+
+.name_card {
+    top: 218px;
+    left: 87px;
+}
+
+.foot {
+    font-size:  0.7rem;
+    position: fixed;
+    bottom: 3px;
+    left: 35%;
+}
+
+ .hover {
+    position: absolute;
+    height: 55px;
+    width: 308px;
+    background-color: #f26522;
+    top: 145px;
+    opacity: 0%;
+    /* visibility: hidden; */
+}
+
+.from {
+    font-size: 0.6rem;
+}
+
+.cost {
+    font-size: 1.2rem;
+}
+
+.detail {
+    float: right;
+    font-size: 0.8rem;
+}
+
+.hover > div {
+    margin: 7px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f26522;
+}
+
+.hover:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+

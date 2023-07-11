@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rates</title>
+    <style>
+        body {
+            background-color: rgb(20, 17, 17);
+            color: white;
+        }
+        table {
+            border: 1px solid green;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: rgb(18, 18, 18);
+            color: lightgreen;
+        }
+        .r030 {
+            text-align: center;
+        }
+        .txt {
+            font-style: italic;
+            text-align: center;
+        }
+        .rate {
+            font-weight: bold;
+            color: brown;
+        }
+        .cc {
+            color: blue;
+        }
+        .exchangedate {
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div style="width: 900px; font-style: italic; font-weight: bold;">
+        Запрос на API НБУ и выводом курса валют на экран в остилизованной таблице
+    </div><br>
+
+<table border="1px">
+    <thead>
+        <tr>
+            <th>r030</th>
+            <th>txt</th>
+            <th>rate</th>
+            <th>cc</th>
+            <th>exchangedate</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<script>
+let resultik;
+fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json').then(state => state.json()).then(result => {
+    console.log(result);
+    resultik = result;
+    for (i=0; i<result.length; i++) {
+        tr = document.createElement('tr');
+        document.querySelector('tbody').append(tr);
+        for (j=0; j<5; j++) {
+            td = document.createElement('td');
+            tr.append(td);
+            switch (j) {
+                case 0: td.textContent = result[i].r030; td.className = 'r030'; break; 
+                case 1: td.textContent = result[i].txt; td.className = 'txt'; break; 
+                case 2: td.textContent = result[i].rate; td.className = 'rate'; break; 
+                case 3: td.textContent = result[i].cc; td.className = 'cc'; break; 
+                case 4: td.textContent = result[i].exchangedate; td.className = 'exchangedate'; break;
+            } 
+        }
+    }
+})
+
+</script>
+</body>
+</html>

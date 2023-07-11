@@ -1,0 +1,115 @@
+﻿#widthpage {
+	margin: 2%;
+}
+
+.name{
+	font-size: 40px;
+}
+
+span {
+	color: #4bcaff;
+}
+
+.header {
+	background-color: #35444f;
+	overflow: auto;
+	min-width: 440px;
+}
+
+span4 {
+	color: #35444f;
+	font-size: 12px;
+	float: left;
+	padding: 12px;
+}
+
+span1 {
+	color: white;
+	font-size: 12px;
+	float: left;
+	padding: 12px;
+}
+
+span1:hover{
+	float: left;
+	background-color: #222f3a;
+	border-left: 0.1rem solid  white;
+	border-right: 0.1rem solid  white;
+}
+
+.container{
+	overflow: auto;
+}
+
+.article1 {
+	border:0.2rem solid  #495863;
+	float: left;
+}
+
+.article1 > p{
+	margin: 16px 60px 16px 40px;
+}
+
+.article1 > p:hover{
+	background-color: #dbdbdb;
+	color: black;
+	margin: 0;
+	padding-left: 75px;
+	padding-top: 16px;
+	padding-right: 0;
+	padding-bottom: 16px;
+}
+
+.article2 {
+	margin: 0px 26px;
+	display: inline-block;
+	float: left;
+}
+
+.section1{
+	display: inline-block;
+	border:0.2rem solid  #495863;
+	min-height: 85px;
+}
+
+.section1>div{
+	background-image: url("../img/html.png");
+	margin: 37px 134px 26px 150px;
+	background-size: 95px 80px;
+	background-repeat: round;
+	min-width: 80px;
+	min-height: 95px;
+}
+
+.section2 {
+	max-width: 400px;
+	font-size: 9px;
+	color: rgba(44, 44, 44, 255);
+	text-align: left;
+}
+
+.footer {
+	background-color: #b4b7ba;
+	font-size: 14px;
+	padding: 12px 22px;
+	overflow: auto;
+}
+
+span2 {
+	float: left;
+	margin: 0 12px 0 0;
+}
+
+right{
+	float: right;
+}
+
+span2:hover{
+	color: #548fab;
+	text-decoration: underline;
+}
+
+right:hover{
+	color: #548fab;
+	text-decoration: underline;
+}

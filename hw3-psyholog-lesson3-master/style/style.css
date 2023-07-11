@@ -1,0 +1,187 @@
+﻿body {
+	margin: 0 25%;
+}
+
+.center{
+	
+	
+}
+
+ .header{
+	background-color: #2d7053;
+	width: 750px;
+	height: 235px;
+}
+
+.part1{
+	width: 141px;
+	height: 141px;
+	background-color: white;
+	border-radius: 70.5px;
+	margin: 47px 38px;
+}
+
+.ul {
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 30px;
+	color: rgba(255, 255, 255, 255);
+	margin: 0px 20px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+   
+ .set1{
+	background-image: url("../img/set.png");
+	background-repeat: no-repeat;
+	min-width: 84px;
+	min-height: 12px;
+ }
+  .set2{
+	background-image: url("../img/set.png");
+	background-repeat: no-repeat;
+	min-width: 84px;
+	min-height: 12px;
+	margin: 16px 0px;
+ }
+  .set3{
+	background-image: url("../img/set.png");
+	background-repeat: no-repeat;
+	min-width: 84px;
+	min-height: 12px;
+ }
+ .ul2{
+	margin: 0px 0px 0px 231px;
+}
+
+.door{
+	background-image: url("../img/door.png");
+	background-repeat: no-repeat;
+	min-width: 750px;
+	min-height: 466px;
+}
+
+.shadow{
+	background-color: rgba(0, 0, 0, .4);
+	width: 740px;
+	height: 440px;
+	margin: 0px 0px 22px 9px;
+}
+
+.orange {
+	width: 341px;
+	height: 74px;
+	background-color: #cb9223;
+	margin: 345px 204px 47px 205px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 24px;
+	color: rgba(255, 255, 255, 255);
+	text-align: center;
+	display: inline-block;
+}
+
+.psyholog{
+	background-image: url("../img/psyholog.png");
+	background-repeat: no-repeat;
+	width: 247px;
+	height: 247px;
+	border-radius: 123.5px/123.5px;
+	margin: 73px 73px 60px 44px;
+}
+
+
+
+.li1{
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 36px;
+	color: rgba(0, 0, 0, 255);
+}
+
+.li2{
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 24px;
+	color: rgba(0, 0, 0, 255);
+	max-width: 245px;
+}
+
+.about{
+	max-width: 590px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 24px;
+	color: rgba(0, 0, 0, 255);
+	margin: 0px 0px 0px 44px;
+}
+
+.reason{
+	margin: 46px 0px 43px 44px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 36px;
+	color: rgba(0, 0, 0, 255);
+}
+
+.reasons{
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 24px;
+	color: rgba(0, 0, 0, 255);
+	margin: 0px 0px 44px 44px;
+}
+
+.orange2 {
+	width: 341px;
+	height: 74px;
+	background-color: #cb9223;
+	margin: 0px 0px 50px 218px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 24px;
+	color: rgba(255, 255, 255, 255);
+	text-align: center;
+	display: inline-block;
+}
+
+.footer{
+	background-color: #888888;
+	width: 750px;
+	height: 153px;
+}
+
+.circle{
+	width: 96px;
+	height: 96px;
+	background-color: white;
+	border-radius: 48px;
+	margin: 29px 184px 28px 45px;
+}
+
+.nothing{
+	margin: 56px 0px 29px  0px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 18px;
+	color: #888888;
+}
+
+.adress{
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 18px;
+	color: rgba(255, 255, 255, 255);
+}
+
+.nomer{
+	margin: 56px 0px 29px 46px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 18px;
+	color: rgba(255, 255, 255, 255);
+	min-width: 139px;
+}
+
+.sajt{
+	margin: 0px 44px 0px 38px;
+	font-family: ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 18px;
+	color: rgba(255, 255, 255, 255);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        legend {
+            font-weight: bold;
+            color: darkblue;
+        }
+        input, label, select {
+            float: right;
+        }
+        label {
+            margin-right: 10px;
+            position: relative;
+            bottom: 0px;
+        }
+        fieldset {
+            width: 20%;
+        }
+        select {
+            margin-left: 20px;
+            width: 150px;
+            height: 25px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form method="get" action="./index.php">
+        <fieldset>
+            <legend>Personal information</legend>
+
+            <input type="text" name="fn" id="fn" />
+            <label for="fn" accesskey="k"><b>*First Name:</b></label></br></br>
+            
+            <input type="text" name="mn">
+            <label for="mn">Middle Name:</label></br></br>
+            
+            <input type="text" name="ln">
+            <label for="ln"><b>*Last Name:</b></label></br></br>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Address</legend>
+
+            <input type="text"  id="fn"  name="address"/>
+            <label for="fn">Address: </label></br></br>
+            
+            <input type="text" name="city_town" id="ct">
+            <label for="ct">City or Town:</label></br></br>
+
+            <select id="state" name="state" row="10">
+                <option value="California">California</option>
+                <option disabled value="Dakota">Dakota</option>
+                <option value="Tehas">Tehas</option>
+                <option disabled selected>Choose a State</option>
+            </select>
+            <label for="state">State:</label></br></br>
+            
+            <input type="text" id="zc" name="zc">
+            <label for="zc"><b>*Zip Code:</b></label></br></br>
+
+        </fieldset>
+    </form>
+
+
+</body>
+</html>

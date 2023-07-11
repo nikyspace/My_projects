@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards of StarWars</title>
+    <style>
+        body {
+            background-color: darksalmon;
+        }
+        .card {
+            width: 210px;
+            height: 125px;
+            border: 1px solid red;
+            margin-left: 1px;
+            font-family: monospace;
+            position: relative;
+        }
+        .left {
+            color: rgb(18, 18, 18);
+            float: left;
+            padding: 3px;
+        }
+        .right {
+            color: rgb(248, 46, 46);
+            float: right;
+            padding: 3px;
+        }
+        [class^="input_"] {
+            position: absolute;
+            bottom: 3px;
+            left: 3px;
+        }
+        .arrow {
+            position: absolute;
+            bottom: 0px;
+            padding: 6px;
+            color: rgb(15 15 92);
+        }
+        .toLS {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            padding: 6px 3px;
+        } 
+    </style>
+</head>
+<body>
+    <div style="width: 900px; font-style: italic; font-weight: bold;">
+        Выполнить запрос на https://swapi.dev/api/people, получить список, карточку героя, создать кнопку сохранить в браузере.
+    </div><br>
+
+    <input id="all_heroes" type="submit" value="Heroes">
+    <br><br> 
+    
+</body>
+<script>
+    let heroes;
+
+    function card(i,heroes,r) {
+        div = document.createElement('div');
+        document.body.append(div);
+
+        input = document.createElement('input');
+        div.append(input);
+        input.type = 'submit';
+        input.value = heroes.results[i].name;
+        
+        input.style.width = '150px';
+        input.style.backgroundColor = 'black';
+        input.style.color = 'white';
+        input.style.border = '1px solid white';
+        input.addEventListener('mouseover', event=> event.target.style.backgroundColor = 'gray');
+        input.addEventListener('mouseout', event=> event.target.style.backgroundColor = 'black');
+        input.style.cursor = 'pointer';
+        
+        input.addEventListener('click', (event)=>{
+            if (event.target.nextSibling !== null) {
+                if (event.target.nextSibling.style.display == 'block') {
+                    event.target.nextSibling.style.display = 'none';
+                } else event.target.nextSibling.style.display = 'block';
+            } else {
+                event.target.after(document.createElement('div'));
+                event.target.nextSibling.className = 'card';
+
+                event.target.nextSibling.append(document.createElement('span'));
+                event.target.nextSibling.firstChild.className = 'left';
+                event.target.nextSibling.firstChild.innerHTML = 'Name' + '<br>' + 'Gender' + '<br>' + 'Height' + '<br>' + 'Skin' + '<br>' + 'Birth' + '<br>' + 'Homeworld';
+
+                event.target.nextSibling.append(document.createElement('span'));
+                event.target.nextSibling.lastChild.className = 'right';
+                event.target.nextSibling.lastChild.innerHTML = heroes.results[i].name + '<br>' + heroes.results[i].gender + '<br>' + heroes.results[i].height + '<br>' + heroes.results[i].skin_color + '<br>' + heroes.results[i].birth_year + '<br>' + r;
+
+                event.target.nextSibling.append(document.createElement('input'));
+                event.target.nextSibling.lastElementChild.className = 'input_'+i;
+                document.querySelector(`.input_${i}`).type = 'submit';
+                document.querySelector(`.input_${i}`).value = 'Save';
+                document.querySelector(`.input_${i}`).after(document.createElement('span'));
+                document.querySelector(`.input_${i}`).nextSibling.textContent = '=>';
+                document.querySelector(`.input_${i}`).nextSibling.className = 'arrow';
+                document.querySelector(`.input_${i}`).nextSibling.after(document.createElement('span'));
+                document.querySelector(`.input_${i}`).nextSibling.nextSibling.textContent = 'Local Storage';
+                document.querySelector(`.input_${i}`).nextSibling.nextSibling.className = 'toLS';
+
+                document.querySelector(`.input_${i}`).addEventListener('click', (event)=>{                
+                    for (j=0; j<11; j++) {
+                        if (j%2==0) {
+                            localStorage[heroes.results[i].name + ', '+ event.target.parentElement.children[0].childNodes[j].textContent] = event.target.parentElement.children[1].childNodes[j].textContent;
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    all_heroes.addEventListener('click', ()=>{
+        fetch("https://swapi.dev/api/people").then(state =>state.json()).then(result => {
+            heroes = result;
+            for (let i=0; i<heroes.results.length; i++) {
+                fetch(heroes.results[i].homeworld).then(state=> state.json()).then(result=>{
+                    card(i,heroes,result.name);
+                });
+            };
+        });
+    });
+</script>
+</body>
+</html>

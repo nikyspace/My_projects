@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div > div {
+            background-color: brown;
+            width: 44px;
+            height: 44px;
+            outline: 4px solid chocolate; 
+            /* outline-offset: -2px; */
+            font-size: 40px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            margin-right: 6px;
+            margin-bottom: 2px;
+            top: 4px;
+            left: 4px;
+        }
+
+        span {
+            background-color: brown;
+            width: 44px;
+            height: 44px;
+            outline: 4px solid chocolate; 
+            /* outline-offset: -2px; */
+            font-size: 40px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            margin-right: 6px;
+            margin-bottom: 2px;
+            top: 4px;
+            left: 4px;
+            opacity: 0;
+        }
+        div {
+            position: relative;
+            background-color: lightgreen;
+            width: 552px;
+            height: 301px;;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <script>
+
+        document.write(" Треугольник: <br>");
+
+        document.write("<div>");
+
+        let x1 = 0;
+        let x2 = 0;
+
+        for (let i = 0; i < 6; i++) {
+            for ( let s = 0 + i; s < 5; s++ ) { //Префиксный или суфиксный x во всех циклах одного ряда будет одинаковым
+                document.write("<span></span>");
+            }
+            for (let j = 5 - i*2; j < 6; j++) {
+                document.write("<div></div>");
+            }
+            document.write("</br>");
+        }
+
+        document.write("</div>");
+        
+        
+    </script>
+</body>
+</html>

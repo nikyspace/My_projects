@@ -1,0 +1,17 @@
+User-agent: *
+#  	Comment
+#	Comment
+#	Allow: /site
+#	Disallow: /
+#	Такая инструкция запрещает индексировать весь сайт, за исключением папки site.
+#	Disallow:
+#	Если данная директива будет указана пустой, то это означает, что весь сайт открыт для индексации.	
+#	Disallow: /images/
+#	Disallow: /mp4/
+#	Disallow: /jpg/
+Allow: /css/*.css
+Allow: /js/*.js
+Allow: /style/*.css
+Allow: /javascript/*.js
+Sitemap: https://santehbud.net/sitemap.xml
+# Host: santehbud.net

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, input {
+            background-color: #F1948A;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- // При загрузке страници - показать на ней кнопку с текстом "Нарисовать круг". Данная кнопка должна являться единственным контетом в теле HTML документа, весь остальной контент должен быть создан и добавлен на страницу с помощью JavaScript. При нажатии на кнопку "Нарисовать круг", показывать одно поле ввода - диаметр круга. При нажатии на кнопку "Нарисовать", создать на странице 100 кругов(10*10) случайного цвета. При клике на конкретный круг - этот круг должен исчезать, при этом пустое место заполняться, то есть все остальные круги сдвигаються влево. -->
+<div style="width: 900px; font-style: italic; font-weight: bold;">
+    При загрузке страници - показать на ней кнопку с текстом "Нарисовать круг". Данная кнопка должна являться единственным контетом в теле HTML документа, весь остальной контент должен быть создан и добавлен на страницу с помощью JavaScript. При нажатии на кнопку "Нарисовать круг", показывать одно поле ввода - диаметр круга. При нажатии на кнопку "Нарисовать", создать на странице 100 кругов(10*10) случайного цвета. При клике на конкретный круг - этот круг должен исчезать, при этом пустое место заполняться, то есть все остальные круги сдвигаються влево.
+</div><br>
+
+<input type="button" onclick="js()" style="width: 210px;" value="Нарисовать круг" /><br />
+
+<script>
+    //Нарисовать на странице круг использя параметры, которые введет пользователь.
+
+    //При загрузке страници - показать на ней кнопку с текстом "Нарисовать круг". Данная кнопка должна являться единственным контетом в теле HTML документа, весь остальной контент должен быть создан и добавлен на страницу с помощью JavaScript.
+
+    //При нажатии на кнопку "Нарисовать круг", показывать одно поле ввода - диаметр круга. При нажатии на кнопку "Нарисовать", создать на странице 100 кругов(10*10) случайного цвета. При клике на конкретный круг - этот круг должен исчезать, при этом пустое место заполняться, то есть все остальные круги сдвигаються влево.
+
+
+function js () {
+    document.write("<body style='color: darkseagreen; background-color:  #F1948A' >");
+    document.write("<input onchange='diam ()' style='color: black; background-color:  white; margin-bottom: 15px;' type='number' name='' placeholder='диаметр круга' autofocus class='diag'><br />");
+    document.write("<input type='button' onclick='create()' style='width: 150px;' value='Нарисовать'/><br />");
+}
+
+let d = 40;
+function diam () {
+    d = document.getElementsByTagName("input")[0].value;
+}
+
+let cicl = 0; let y = 0;
+let listc = document.getElementsByTagName("input");
+
+
+function create () {
+    if (cicl < 1) {
+        circles ();
+    } else {
+        // Присваивать новые значения обьектам круга
+        for (let z=0;z<100;z++) {
+            if (typeof(list[z].childNodes[0]) != 'object') {
+                input = document.createElement('input');
+                list[z].append(input);
+                list[z].childNodes[0].style.border = '0px';
+                list[z].childNodes[0].type = 'button';
+                list[z].childNodes[0].style.borderBottomLeftRadius = '50%';
+                list[z].childNodes[0].style.borderBottomRightRadius = '50%';
+                list[z].childNodes[0].style.borderTopLeftRadius = '50%';
+                list[z].childNodes[0].style.borderTopRightRadius = '50%';
+                list[z].childNodes[0].onclick = () => del (z);      
+                }
+            }
+        
+
+        for (z=2; z<102; z++ ) {
+            a = Math.floor((Math.random()+1)*100);
+            b = Math.floor((Math.random()+1)*100);
+            c = Math.floor((Math.random()+1)*100);
+            listc[z].style.backgroundColor = "rgb("+a+", "+b+", "+c+")";
+            listc[z].style.width = ''+d+'px';
+            listc[z].style.height = ''+d+'px';
+        }
+    }
+}
+
+function circles () {
+    cicl++;
+    function circle (i) {
+        a = Math.floor((Math.random()+1)*100);
+        b = Math.floor((Math.random()+1)*100);
+        c = Math.floor((Math.random()+1)*100);
+        document.write("<span><input type='button' onclick='del ("+i+")' style='background-color:  rgb("+a+","+b+","+c+"); border-radius: 50%; border: 0px; width: "+d+"px; height: "+d+"px;' value='' /></span>");
+    }
+
+    document.write("</br>");
+
+    document.write("<div style='display: flex; flex-direction: row; flex-wrap: wrap;'>");
+    const circle_array = new Array;
+    for (i=0; i<100; i++) {
+
+            circle_array[i] = new circle(i);
+
+            q = (i + 1)%10;
+            if  (q == 0) {
+                document.write("</div>");
+                document.write("<div style='display: flex; flex-direction: row; flex-wrap: wrap;'>");
+        }
+    }
+
+    document.write("</br>");
+}
+const list = document.getElementsByTagName("span");
+    function del (x) {  
+        const list = document.getElementsByTagName("span");
+        list[x].childNodes[0].remove();
+    }
+</script>
+</body>
+</html>

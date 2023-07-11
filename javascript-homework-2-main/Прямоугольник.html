@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div > div {
+            background-color: brown;
+            width: 44px;
+            height: 44px;
+            outline: 4px solid chocolate;
+            /* outline-offset: -2px; */
+            font-size: 40px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            margin-right: 6px;
+            margin-bottom: 2px;
+            top: 4px;
+            left: 4px;
+        }
+
+        span {
+            position: relative;
+            bottom: -2px;
+        }
+        .opacity {
+            opacity: 0;
+        }
+        div {
+            position: relative;
+            background-color: lightgreen;
+            padding-bottom: 4px;
+            /* width: 1000px; */
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <script>
+        
+        document.write(" Прямоугольник: <br>");
+
+        document.write("<div>");
+
+        for (let i = 0; i < 10; i++) {
+                for ( let j = 0; j < 10; j++ ) {
+                    if ( j%2 == 0 ) {
+                        document.write( "<div><span>$</span></div>" );
+                    } else {
+                        document.write( "<div><span>&nbsp;</span></div>" );
+                    }
+                    
+                }
+                document.write("<br>");
+            }
+
+
+        document.write("</div>");
+
+        
+
+    </script>
+</body>
+</html>
